@@ -1,0 +1,39 @@
+name: learn_n_app
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.12.0 
+
+flutter:
+  fonts:
+    - family: PressStart2P
+      fonts:
+        - asset: assets/fonts/PressStart2P-Regular.ttf
+
+  uses-material-design: true
+
+  assets:
+    - assets/logo.jpg
+    - assets/logo_icon.png
+    - assets/add_button.png
+    - assets/hexagon_button.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo_icon.png"
