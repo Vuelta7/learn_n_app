@@ -109,9 +109,12 @@ class _QuestionCardState extends State<QuestionCard>
             ),
             const SizedBox(height: 10),
             IconButton(
-              icon: const Icon(Icons.edit, size: 30),
+              icon: const Icon(
+                Icons.edit,
+                size: 30,
+                color: Colors.black,
+              ),
               onPressed: () {
-                // Handle edit action for front side
                 print("Edit button pressed");
               },
             ),
@@ -123,8 +126,7 @@ class _QuestionCardState extends State<QuestionCard>
 
   Widget _buildBack() {
     return Visibility(
-      visible:
-          _animation.value >= 0.5, // Show back when animation is more than 0.5
+      visible: _animation.value >= 0.5,
       child: Transform(
         transform: Matrix4.rotationY(_animation.value < 0.5 ? 0 : 3.14159),
         alignment: Alignment.center,
@@ -142,7 +144,11 @@ class _QuestionCardState extends State<QuestionCard>
               ),
               const SizedBox(height: 10),
               IconButton(
-                icon: const Icon(Icons.edit, size: 30),
+                icon: const Icon(
+                  Icons.edit,
+                  size: 30,
+                  color: Colors.black,
+                ),
                 onPressed: () {
                   // Handle edit action for front side
                   print("Edit button pressed");

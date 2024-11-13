@@ -79,33 +79,10 @@ class HomeScreen extends StatelessWidget {
             color: Colors.black,
             height: 4.0,
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu_book_rounded,
-                  color: Colors.black,
-                  size: 40,
-                ),
-              ),
-              Container(
-                width: 3.0,
-                height: 40.0,
-                color: Colors.black,
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.bookmark_border_rounded,
-                  color: Colors.black,
-                  size: 40,
-                ),
-              ),
-            ],
-          ),
+          Container(
+            color: Colors.white,
+            height: 50,
+          )
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -115,8 +92,8 @@ class HomeScreen extends StatelessWidget {
         },
         child: Image.asset(
           'assets/add_button.png',
-          width: 120,
-          height: 120,
+          width: 100,
+          height: 100,
         ),
       ),
       drawer: Drawer(

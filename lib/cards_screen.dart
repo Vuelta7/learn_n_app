@@ -81,6 +81,19 @@ class CardsScreen extends StatelessWidget {
                 title: "What is love?",
                 backContent: "si august",
               ),
+              QuestionCard(
+                title: "What is Flutter?",
+                backContent:
+                    "Flutter is an open-source UI software development toolkit created by Google.",
+              ),
+              QuestionCard(
+                title: "What is programming?",
+                backContent: "ewan diko alam",
+              ),
+              QuestionCard(
+                title: "What is love?",
+                backContent: "si august",
+              ),
             ],
           ),
         ),
@@ -92,32 +105,10 @@ class CardsScreen extends StatelessWidget {
             color: Colors.black,
             height: 4.0,
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  size: 30,
-                  color: Colors.black,
-                ),
-              ),
-              Container(
-                width: 3.0,
-                height: 40.0,
-                color: Colors.black,
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  size: 30,
-                ),
-              ),
-            ],
-          ),
+          Container(
+            color: Colors.white,
+            height: 60,
+          )
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -136,7 +127,7 @@ class CardsScreen extends StatelessWidget {
             ),
             const Icon(
               Icons.play_arrow,
-              size: 50,
+              size: 40,
               color: Colors.white,
             ),
           ],
