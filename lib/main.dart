@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/cards_screen.dart';
+import 'package:learn_n_app/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(useMaterial3: true),
-      home: const CardsScreen(),
+      title: 'Learn-N',
+      home: SplashScreen(),
     );
   }
 }
