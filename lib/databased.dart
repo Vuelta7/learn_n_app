@@ -1,8 +1,12 @@
-/* this is what i am thinking for my databased 
-for the 'LoginScreen' if the username and password is in databased
-he will be logged in to the app with his folders and questions and
-the app should remember if the user is already logged in, so that 
-'LoginScreen' can change to '_playButton' instead of '_loginForm'
+/* 
+this is what i am thinking for my databased 
+folders numbering is the numbers of the FolderDecks widget
+folderName is given(for example java and javascript)
+now once they click the FolderDecks widget they will go
+to the QuestionScreen widget that has 
+secondary folders/sub decks(this will be FolderDecks widget too, inside there will also be questions)
+and questions (this will be question card)
+let not do too much for now lets do the others for next let try it out 
 */
 
 Map<String, dynamic> database = {
@@ -11,26 +15,28 @@ Map<String, dynamic> database = {
       'folderName': 'Java',
       'insideFolder': {
         'folders': {
-          'folderName': 'arrays',
+          1: {
+            'folderName': 'arrays',
+            'questions': {
+              1: {
+                'question': 'what is array',
+                'answer': 'collection of data',
+              },
+              2: {
+                'question': 'what is index',
+                'answer': 'address of array',
+              },
+            },
+          },
           'questions': {
             1: {
-              'question': 'what is array',
-              'answer': 'collection of data',
+              'question': 'what is java',
+              'answer': 'a programming language',
             },
             2: {
-              'question': 'what is index',
-              'answer': 'address of array',
+              'question': 'java strengths',
+              'answer': 'robust, fast, and multi platform',
             },
-          },
-        },
-        'questions': {
-          1: {
-            'question': 'what is java',
-            'answer': 'a programming language',
-          },
-          2: {
-            'question': 'java strengths',
-            'answer': 'robust, fast, and multi platform',
           },
         },
       }
