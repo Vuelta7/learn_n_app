@@ -287,14 +287,13 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: const Center(
-        //this widget needs to get updated by the database with the foldername
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
                 height: 15,
               ),
-              FolderDecks(title: "Javascript"),
+              FolderDecks(title: "Python"),
             ],
           ),
         ),
@@ -488,72 +487,81 @@ class FolderDecks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: 310,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(9),
-            border: Border.all(
-              width: 4,
-              color: const Color.fromARGB(255, 0, 0, 0),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.5),
-                offset: const Offset(0, 5),
-                blurRadius: 10,
-                spreadRadius: 0,
+        GestureDetector(
+          onTap: () {
+            // When the FolderDecks container is tapped, navigate to CardsScreen
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CardsScreen()),
+            );
+          },
+          child: Container(
+            width: 310,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(9),
+              border: Border.all(
+                width: 4,
+                color: const Color.fromARGB(255, 0, 0, 0),
               ),
-            ],
-          ),
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 40,
-                decoration: const BoxDecoration(
-                  color: Colors.grey,
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Colors.black,
-                      width: 4.0,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(0, 5),
+                  blurRadius: 10,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 40,
+                  decoration: const BoxDecoration(
+                    color: Colors.grey,
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.black,
+                        width: 4.0,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 8),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Favorite button
-                      Icon(
-                        Icons.star_border_purple500_rounded,
-                        size: 40,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                      // Edit button
-                      Icon(
-                        Icons.more_horiz_rounded,
-                        size: 40,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                    const SizedBox(height: 8),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Favorite button
+                        Icon(
+                          Icons.star_border_purple500_rounded,
+                          size: 40,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                        // Edit button
+                        Icon(
+                          Icons.more_horiz_rounded,
+                          size: 40,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         const SizedBox(
@@ -575,7 +583,7 @@ class CardsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
-          'Java',
+          'Python',
           style: TextStyle(
             color: Colors.black,
             fontFamily: 'PressStart2P',
@@ -819,7 +827,13 @@ class CardsScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: GestureDetector(
         onTap: () {
-          print('Custom image button pressed');
+          // Navigate to the QuestionScreen when the button is pressed
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    QuestionScreen()), // Assuming you already have the QuestionScreen
+          );
         },
         child: Stack(
           alignment: Alignment.center,
@@ -1014,7 +1028,7 @@ class QuestionScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
-          'Java',
+          'Python',
           style: TextStyle(
             color: Colors.black,
             fontFamily: 'PressStart2P',
@@ -1083,30 +1097,33 @@ class QuestionScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: const Column(
-                  children: [
-                    Text(
-                      '_',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        '_',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Divider(
+                        thickness: 3,
                         color: Colors.black,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Divider(
-                      thickness: 3,
-                      color: Colors.black,
-                    ),
-                    Text(
-                      'What is love',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
+                      Text(
+                        'a programming language that lets you work quickly and integrate systems more effectively.',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
