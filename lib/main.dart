@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Learn-N',
-      home: CardsScreen(),
+      home: SplashScreen(),
     );
   }
 }
@@ -1041,10 +1041,7 @@ class QuestionScreen extends StatelessWidget {
           ),
           color: Colors.black,
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const CardsScreen()),
-            );
+            Navigator.pop(context); // Go back to the previous screen
           },
         ),
         actions: [
@@ -1052,7 +1049,7 @@ class QuestionScreen extends StatelessWidget {
             icon: const Icon(Icons.settings, size: 30),
             color: Colors.black,
             onPressed: () {
-              print('Notification button pressed');
+              _showSettingsDialog(context); // Show the settings dialog
             },
           ),
         ],
@@ -1137,7 +1134,7 @@ class QuestionScreen extends StatelessWidget {
                   fontSize: 14,
                 ),
                 decoration: InputDecoration(
-                  labelText: 'answer',
+                  labelText: 'Answer',
                   labelStyle: const TextStyle(
                     fontFamily: 'PressStart2P',
                     color: Color.fromARGB(255, 0, 0, 0),
@@ -1171,6 +1168,74 @@ class QuestionScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  // Function to show the settings dialog with the switch
+  void _showSettingsDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          title: const Text(
+            'Settings',
+            style: TextStyle(
+              fontFamily: 'PressStart2P',
+              fontSize: 24,
+              color: Colors.black,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Select input mode:',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Typing Only',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                  Switch(
+                    value: false, // No functionality yet
+                    onChanged: (value) {}, // No functionality yet
+                    activeColor: Colors.black,
+                  ),
+                  const Text(
+                    'Multiple Option',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'Close',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
