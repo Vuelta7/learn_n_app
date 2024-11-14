@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Learn-N',
-      home: SplashScreen(),
+      home: CardsScreen(),
     );
   }
 }
@@ -287,20 +287,14 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: const Center(
-        //this widget need to get updated by the database i provided title: foldername
+        //this widget needs to get updated by the database with the foldername
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
                 height: 15,
               ),
-              FolderDecks(title: "C#"),
               FolderDecks(title: "Javascript"),
-              FolderDecks(title: "Java"),
-              FolderDecks(title: "Science"),
-              FolderDecks(title: "Math"),
-              FolderDecks(title: "English"),
-              FolderDecks(title: "Filipino"),
             ],
           ),
         ),
@@ -321,7 +315,95 @@ class HomeScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: GestureDetector(
         onTap: () {
-          print('Custom image button pressed');
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return Dialog(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text(
+                          "Add New Folder",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontFamily: 'PressStart2P',
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        TextField(
+                          cursorColor: const Color.fromARGB(255, 7, 7, 7),
+                          style: const TextStyle(
+                            fontFamily: 'Arial',
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            fontSize: 14,
+                          ),
+                          decoration: InputDecoration(
+                            labelText: 'Folder Name',
+                            labelStyle: const TextStyle(
+                              fontFamily: 'PressStart2P',
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                            filled: true,
+                            fillColor: const Color.fromARGB(255, 255, 255, 255),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                width: 3,
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                width: 3,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                width: 3,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Add folder creation logic here
+                            print('Create button pressed');
+                            Navigator.pop(context); // Close the dialog
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 24),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: const Text(
+                            "Create",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontFamily: 'PressStart2P',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
         },
         child: Image.asset(
           'assets/add_button.png',
@@ -520,7 +602,167 @@ class CardsScreen extends StatelessWidget {
             ),
             color: Colors.black,
             onPressed: () {
-              print('Notification button pressed');
+              // Show a dialog when the add button is pressed
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return Dialog(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(9),
+                        border: Border.all(
+                          width: 3,
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.5),
+                            offset: const Offset(0, 5),
+                            blurRadius: 10,
+                            spreadRadius: 0,
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Text(
+                              'Answer:',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontFamily: 'PressStart2P'),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 10),
+                            SingleChildScrollView(
+                              child: TextField(
+                                cursorColor: const Color.fromARGB(255, 7, 7, 7),
+                                style: const TextStyle(
+                                  fontFamily: 'Arial',
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  fontSize: 14,
+                                ),
+                                maxLines:
+                                    null, // Allows the field to expand as the user types
+                                keyboardType: TextInputType
+                                    .multiline, // Enable multiline typing
+                                decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      width: 3,
+                                    ),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      width: 3,
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      width: 3,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+                            const Text(
+                              'Question or Definition:',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                fontFamily: 'PressStart2P',
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 10),
+                            SingleChildScrollView(
+                              child: TextField(
+                                cursorColor: const Color.fromARGB(255, 7, 7, 7),
+                                style: const TextStyle(
+                                  fontFamily: 'Arial',
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  fontSize: 14,
+                                ),
+                                maxLines:
+                                    null, // Allows the field to expand as the user types
+                                keyboardType: TextInputType
+                                    .multiline, // Enable multiline typing
+                                decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      width: 3,
+                                    ),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      width: 3,
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      width: 3,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+                            // Add Button
+                            ElevatedButton(
+                              onPressed: () {
+                                // Add question and answer saving logic here
+                                print('Add button pressed');
+                                Navigator.pop(context); // Close the dialog
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 12, horizontal: 24),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              child: const Text(
+                                "Add",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontFamily: 'PressStart2P',
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              );
             },
           ),
         ],
@@ -556,23 +798,6 @@ class CardsScreen extends StatelessWidget {
               QuestionCard(
                 title: "What is programming?",
                 backContent: "ewan diko alam",
-              ),
-              QuestionCard(
-                title: "What is love?",
-                backContent: "si august",
-              ),
-              QuestionCard(
-                title: "What is Flutter?",
-                backContent:
-                    "Flutter is an open-source UI software development toolkit created by Google.",
-              ),
-              QuestionCard(
-                title: "What is programming?",
-                backContent: "ewan diko alam",
-              ),
-              QuestionCard(
-                title: "What is love?",
-                backContent: "si august",
               ),
             ],
           ),
@@ -861,7 +1086,7 @@ class QuestionScreen extends StatelessWidget {
                 child: const Column(
                   children: [
                     Text(
-                      'What is love',
+                      '_',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
@@ -874,7 +1099,7 @@ class QuestionScreen extends StatelessWidget {
                       color: Colors.black,
                     ),
                     Text(
-                      '_',
+                      'What is love',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
