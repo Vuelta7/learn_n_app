@@ -66,22 +66,9 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            color: Colors.black,
-            height: 4.0,
-          ),
-          Container(
-            color: Colors.white,
-            height: 50,
-          )
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: GestureDetector(
-        onTap: () {
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
           showDialog(
             context: context,
             builder: (BuildContext context) {
@@ -174,8 +161,8 @@ class HomeScreen extends StatelessWidget {
         },
         child: Image.asset(
           'assets/add_button.png',
-          width: 100,
-          height: 100,
+          width: 150,
+          height: 150,
         ),
       ),
       drawer: Drawer(
