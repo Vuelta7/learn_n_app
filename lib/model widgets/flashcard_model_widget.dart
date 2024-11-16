@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class QuestionCard extends StatefulWidget {
+class FlashCardModelWidget extends StatefulWidget {
   final String title;
   final String backContent;
 
-  const QuestionCard(
+  const FlashCardModelWidget(
       {super.key, required this.title, required this.backContent});
 
   @override
-  _QuestionCardState createState() => _QuestionCardState();
+  _FlashCardModelWidgetState createState() => _FlashCardModelWidgetState();
 }
 
-class _QuestionCardState extends State<QuestionCard>
+class _FlashCardModelWidgetState extends State<FlashCardModelWidget>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;

@@ -5,8 +5,8 @@ class AddFolderButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -98,11 +98,20 @@ class AddFolderButtonWidget extends StatelessWidget {
           },
         );
       },
-      backgroundColor: Colors.black,
-      child: const Icon(
-        Icons.add_rounded,
-        color: Colors.white,
-        size: 50,
+      child: const Stack(
+        alignment: Alignment.center,
+        children: [
+          Icon(
+            Icons.hexagon_rounded,
+            size: 100,
+            color: Colors.black,
+          ),
+          Icon(
+            Icons.play_arrow,
+            size: 50,
+            color: Colors.white,
+          ),
+        ],
       ),
     );
   }

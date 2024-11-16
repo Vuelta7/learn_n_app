@@ -28,10 +28,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/logo.jpg
     - assets/logo_icon.png
-    - assets/add_button.png
-    - assets/hexagon_button.png
 
 flutter_icons:
   android: true

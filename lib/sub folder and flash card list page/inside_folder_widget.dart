@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/card.dart';
+import 'package:learn_n_app/model%20widgets/flashcard_model_widget.dart';
 import 'package:learn_n_app/home%20page/home_main_widget.dart';
-import 'package:learn_n_app/question.dart';
+import 'package:learn_n_app/model%20widgets/question_model_widget.dart';
 
 class InsideFolderWidget extends StatelessWidget {
   const InsideFolderWidget({super.key});
@@ -229,12 +229,12 @@ class InsideFolderWidget extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              QuestionCard(
+              FlashCardModelWidget(
                 title: "What is Flutter?",
                 backContent:
                     "Flutter is an open-source UI software development toolkit created by Google.",
               ),
-              QuestionCard(
+              FlashCardModelWidget(
                 title: "What is programming?",
                 backContent: "ewan diko alam",
               ),
@@ -261,7 +261,8 @@ class InsideFolderWidget extends StatelessWidget {
           // Navigate to the QuestionScreen when the button is pressed
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const QuestionScreen()),
+            MaterialPageRoute(
+                builder: (context) => const QuestionModelWidget()),
           );
         },
         child: Stack(

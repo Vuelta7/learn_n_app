@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/inside_folder_widget.dart';
+import 'package:learn_n_app/sub%20folder%20&%20flash%20card%20list%20page/inside_folder_widget.dart';
 
-class FolderDecks extends StatelessWidget {
+// this widget is used for the HomeBody
+
+class FolderModelWidget extends StatelessWidget {
   final String title;
 
-  const FolderDecks({super.key, required this.title});
+  const FolderModelWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

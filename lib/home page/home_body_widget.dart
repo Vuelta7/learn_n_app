@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/folder.dart';
+import 'package:learn_n_app/model%20widgets/folder_model_widget.dart';
 
 class HomeBodyWidget extends StatelessWidget {
   const HomeBodyWidget({super.key});
@@ -13,15 +13,15 @@ class HomeBodyWidget extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            FolderDecks(title: "Python"),
-            FolderDecks(title: "Python"),
-            FolderDecks(title: "Python"),
-            FolderDecks(title: "Python"),
-            FolderDecks(title: "Python"),
-            FolderDecks(title: "Python"),
-            FolderDecks(title: "Python"),
-            FolderDecks(title: "Python"),
-            FolderDecks(title: "Python"),
+            FolderModelWidget(title: "Python"),
+            FolderModelWidget(title: "Python"),
+            FolderModelWidget(title: "Python"),
+            FolderModelWidget(title: "Python"),
+            FolderModelWidget(title: "Python"),
+            FolderModelWidget(title: "Python"),
+            FolderModelWidget(title: "Python"),
+            FolderModelWidget(title: "Python"),
+            FolderModelWidget(title: "Python"),
           ],
         ),
       ),
