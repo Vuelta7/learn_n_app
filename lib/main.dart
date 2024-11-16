@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/start.dart';
+import 'package:learn_n_app/start%20page/start.dart';
 
 void main() {
   runApp(const MyApp());

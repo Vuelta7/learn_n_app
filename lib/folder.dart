@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/inside_folder.dart';
+import 'package:learn_n_app/inside_folder_widget.dart';
 
 class FolderDecks extends StatelessWidget {
   final String title;
@@ -12,10 +12,10 @@ class FolderDecks extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            // When the FolderDecks container is tapped, navigate to CardsScreen
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const CardsScreen()),
+              MaterialPageRoute(
+                  builder: (context) => const InsideFolderWidget()),
             );
           },
           child: Container(

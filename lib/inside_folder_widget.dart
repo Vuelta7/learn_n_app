@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:learn_n_app/card.dart';
-import 'package:learn_n_app/home.dart';
+import 'package:learn_n_app/home%20page/home_main_widget.dart';
 import 'package:learn_n_app/question.dart';
 
-class CardsScreen extends StatelessWidget {
-  const CardsScreen({super.key});
+class InsideFolderWidget extends StatelessWidget {
+  const InsideFolderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
