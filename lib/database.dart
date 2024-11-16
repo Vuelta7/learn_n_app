@@ -1,14 +1,4 @@
-/* 
-this is what i am thinking for my databased 
-folders numbering is the numbers of the FolderDecks widget
-folderName is given(for example java and javascript)
-now once they click the FolderDecks widget they will go
-to the QuestionScreen widget that has 
-secondary folders/sub decks(this will be FolderDecks widget too, inside there will also be questions)
-and questions (this will be question card)
-let not do too much for now lets do the others for next let try it out 
-*/
-
+// example of final product
 Map<String, dynamic> database = {
   'folders': {
     1: {

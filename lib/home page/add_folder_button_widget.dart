@@ -107,7 +107,7 @@ class AddFolderButtonWidget extends StatelessWidget {
             color: Colors.black,
           ),
           Icon(
-            Icons.play_arrow,
+            Icons.add_rounded,
             size: 50,
             color: Colors.white,
           ),
