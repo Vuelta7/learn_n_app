@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_n_app/home%20page/home_main_widget.dart';
-import 'package:learn_n_app/sub%20folder%20&%20flash%20card%20list%20page/inside_folder_add_button_widget.dart';
+import 'package:learn_n_app/sub%20folder%20&%20flash%20card%20list%20page/add_button_dialog_widget.dart';
 
 PreferredSizeWidget insideFolderAppBarWidget(BuildContext context) {
   return AppBar(
@@ -36,8 +36,7 @@ PreferredSizeWidget insideFolderAppBarWidget(BuildContext context) {
         onPressed: () {
           showDialog(
             context: context,
-            builder: (BuildContext context) =>
-                const InsideFolderAddButtonWidget(),
+            builder: (BuildContext context) => const AddButtonDialogWidget(),
           );
         },
       ),

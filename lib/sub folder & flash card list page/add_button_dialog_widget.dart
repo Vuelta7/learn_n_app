@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class InsideFolderAddButtonWidget extends StatelessWidget {
-  const InsideFolderAddButtonWidget({super.key});
+class AddButtonDialogWidget extends StatelessWidget {
+  const AddButtonDialogWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +128,7 @@ class InsideFolderAddButtonWidget extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   print('Add button pressed');
-                  Navigator.pop(context); // Close the dialog
+                  Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
