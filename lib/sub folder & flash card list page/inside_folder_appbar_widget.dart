@@ -26,20 +26,8 @@ PreferredSizeWidget insideFolderAppBarWidget(BuildContext context) {
         );
       },
     ),
-    actions: [
-      IconButton(
-        icon: const Icon(
-          Icons.add_box_rounded,
-          size: 40,
-        ),
-        color: Colors.black,
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) => const AddButtonDialogWidget(),
-          );
-        },
-      ),
+    actions: const [
+      AddButtonDialogWidget(),
     ],
     elevation: 0,
     bottom: PreferredSize(

@@ -23,16 +23,14 @@ class QuestionModelWidget extends StatelessWidget {
           ),
           color: Colors.black,
           onPressed: () {
-            Navigator.pop(context); // Go back to the previous screen
+            Navigator.pop(context);
           },
         ),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings, size: 30),
             color: Colors.black,
-            onPressed: () {
-              _showSettingsDialog(context); // Show the settings dialog
-            },
+            onPressed: () {},
           ),
         ],
         elevation: 0,
@@ -150,74 +148,6 @@ class QuestionModelWidget extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  // Function to show the settings dialog with the switch
-  void _showSettingsDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          title: const Text(
-            'Settings',
-            style: TextStyle(
-              fontFamily: 'PressStart2P',
-              fontSize: 24,
-              color: Colors.black,
-            ),
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text(
-                'Select input mode:',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Typing Only',
-                    style: TextStyle(fontSize: 16, color: Colors.black),
-                  ),
-                  Switch(
-                    value: false, // No functionality yet
-                    onChanged: (value) {}, // No functionality yet
-                    activeColor: Colors.black,
-                  ),
-                  const Text(
-                    'Multiple Option',
-                    style: TextStyle(fontSize: 16, color: Colors.black),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text(
-                'Close',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ],
-        );
-      },
     );
   }
 }
