@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learn_n_app/folder%20page/add_button_dialog_widget.dart';
 import 'package:learn_n_app/home%20page/home_main_widget.dart';
-import 'package:learn_n_app/sub%20folder%20&%20flash%20card%20list%20page/add_button_dialog_widget.dart';
 
 PreferredSizeWidget insideFolderAppBarWidget(BuildContext context) {
   return AppBar(
@@ -22,7 +22,7 @@ PreferredSizeWidget insideFolderAppBarWidget(BuildContext context) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
+          MaterialPageRoute(builder: (context) => HomeMainWidget()),
         );
       },
     ),

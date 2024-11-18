@@ -11,7 +11,7 @@ class PlayButtonWidget extends StatelessWidget {
         // Navigate to the QuestionScreen when the button is pressed
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const QuestionModelWidget()),
+          MaterialPageRoute(builder: (context) => QuestionModelWidget()),
         );
       },
       child: const Stack(

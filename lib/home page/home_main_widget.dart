@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/home%20page/add_folder_button_widget.dart';
 import 'package:learn_n_app/home%20page/drawer_widget.dart';
+import 'package:learn_n_app/home%20page/home%20page%20sub%20wigets/add_folder_button_widget.dart';
 import 'package:learn_n_app/home%20page/home_appbar_widget.dart';
 import 'package:learn_n_app/home%20page/home_body_widget.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class HomeMainWidget extends StatelessWidget {
+  HomeMainWidget({super.key});
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
