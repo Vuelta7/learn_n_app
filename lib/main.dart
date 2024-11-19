@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/start%20page/start.dart';
+import 'package:learn_n_app/start%20page/splash_screen_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,9 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Learn-N',
-      home: SplashScreen(),
+      home: SplashScreenWidget(),
     );
   }
 }
+//Sign Up Screen
+//function comments
