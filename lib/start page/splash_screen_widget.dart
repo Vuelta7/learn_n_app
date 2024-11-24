@@ -1,8 +1,23 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:learn_n_app/start%20page/start_screen_widget.dart';
+import 'package:learn_n_app/start%20page/sign_up_screen_widget.dart';
 
+// StreamBuilder(
+//         stream: FirebaseAuth.instance.authStateChanges(),
+//         builder: (context, snapshot) {
+//           if (snapshot.connectionState == ConnectionState.waiting) {
+//             return const Center(
+//               child: CircularProgressIndicator(),
+//             );
+//           }
+//           if (snapshot.data != null) {
+//             return const HomeMainWidget();
+//           }
+//           return const SignupScreenWidget();
+//         },
+//       ),:
+//make this an example
 class SplashScreenWidget extends StatefulWidget {
   const SplashScreenWidget({super.key});
 
@@ -47,7 +62,7 @@ class SplashScreenWidgetState extends State<SplashScreenWidget>
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const StartScreenWidget()),
+          MaterialPageRoute(builder: (context) => const SignupScreenWidget()),
         );
       }
     });

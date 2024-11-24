@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "896261439291",
+    "project_id": "learn-n-database",
+    "storage_bucket": "learn-n-database.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896261439291:android:012379d62b69521f65811e",
+        "android_client_info": {
+          "package_name": "com.example.learn_n_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHNMG2JipW2waU25edeEpT3chCloe3qdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
